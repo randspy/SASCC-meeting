@@ -1,8 +1,6 @@
 package com.company;
 
-/**
- * Created by sgluter on 26/05/15.
- */
+
 public class StringCalculator {
     public int add(String number) {
         if (isNoElement(number)) {
