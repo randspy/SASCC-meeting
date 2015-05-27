@@ -55,13 +55,21 @@ public class StringCalculatorTest {
         assertEquals(3, calc.add("//;\n1;2"));
     }
 
-//    @Test
-//    public void negative_number_should_throw() {
-//
-//        exception.expect(IllegalArgumentException.class);
-//
-//        calc.add("-1,2");
-//    }
+    @Test
+    public void negative_number_should_throw() {
+
+        exception.expect(IllegalArgumentException.class);
+        exception.expectMessage("Negatives not allowed: -1");
+        calc.add("-1,2");
+    }
+
+    @Test
+    public void many_negative_numbers_should_throw() {
+
+        exception.expect(IllegalArgumentException.class);
+        exception.expectMessage("Negatives not allowed: -4,-5");
+        calc.add("2,-4,3,-5");
+    }
 
 
 }
