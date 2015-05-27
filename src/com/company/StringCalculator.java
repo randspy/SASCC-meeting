@@ -18,12 +18,8 @@ public class StringCalculator {
         return number.isEmpty();
     }
 
-    private boolean isOneElement(String[] elements) {
-        return elements.length == 1;
-    }
-
     private String[] separateElements(String number) {
-        return number.split(",");
+        return number.split(",|\n");
     }
 
     private int toInt(String number) {
