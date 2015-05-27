@@ -2,19 +2,16 @@ package com.company;
 
 
 public class StringCalculator {
-    public int add(String number) {
-        if (isNoElement(number)) {
+    public int add(String string) {
+        if (isNoElement(string)) {
             return 0;
         }
 
-        String[] elements = seperateElements(number);
-
-        if (isOneElement(elements)) {
-            return toInt(number);
+        int accumulator = 0;
+        for (String element: separateElements(string)) {
+            accumulator += toInt(element);
         }
-
-        return toInt(elements[0]) + toInt(elements[1]);
-
+        return accumulator;
     }
 
     private boolean isNoElement(String number) {
@@ -25,7 +22,7 @@ public class StringCalculator {
         return elements.length == 1;
     }
 
-    private String[] seperateElements(String number) {
+    private String[] separateElements(String number) {
         return number.split(",");
     }
 

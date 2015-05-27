@@ -25,6 +25,7 @@ public class StringCalculatorTest {
         assertEquals(0, calc.add(""));
     }
 
+
     @Test
     public void oneNumber() {
         assertEquals(1, calc.add("1"));
@@ -39,10 +40,10 @@ public class StringCalculatorTest {
         assertEquals(10, calc.add("10"));
     }
 
-//    @Test
-//    public void When_Many_Numbers_Then_Return_Theirs_Sum() {
-//        assertEquals(6, calc.add("1,2,3"));
-//    }
+    @Test
+    public void When_Many_Numbers_Then_Return_Theirs_Sum() {
+        assertEquals(6, calc.add("1,2,3"));
+    }
 
 //    @Test
 //    public void When_New_Line_Separator() {
