@@ -34,6 +34,10 @@ public class StringCalculatorTest {
     public void When_1_and_2_Then_return_3() {
         assertEquals(3, calc.add("1,2"));
     }
+    @Test
+    public void should_support_numbers_with_many_digits() {
+        assertEquals(10, calc.add("10"));
+    }
 
 //    @Test
 //    public void When_Many_Numbers_Then_Return_Theirs_Sum() {
