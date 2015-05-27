@@ -19,10 +19,10 @@ public class StringCalculator {
     }
 
     private String[] separateElements(String number) {
-        return number.split(",|\n");
+        return number.split("[^0-9]+");
     }
 
     private int toInt(String number) {
-        return Integer.parseInt(number);
+        return number.isEmpty() ? 0 : Integer.parseInt(number);
     }
 }

@@ -50,11 +50,11 @@ public class StringCalculatorTest {
         assertEquals(6, calc.add("1\n2,3"));
     }
 
-//    @Test
-//    public void CustomDelimiter() {
-//        assertEquals(3, calc.add("//;\n1;2"));
-//    }
-//
+    @Test
+    public void CustomDelimiter() {
+        assertEquals(3, calc.add("//;\n1;2"));
+    }
+
 //    @Test
 //    public void negative_number_should_throw() {
 //
