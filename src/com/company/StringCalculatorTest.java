@@ -21,55 +21,52 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void emptyInput() {
+    public void when_empty_input_returns_zero() {
         assertEquals(0, calc.add(""));
     }
 
-
     @Test
-    public void oneNumber() {
+    public void when_one_number_returns_the_number() {
         assertEquals(1, calc.add("1"));
     }
 
     @Test
-    public void When_1_and_2_Then_return_3() {
+    public void when_two_numbers_returns_sum() {
         assertEquals(3, calc.add("1,2"));
     }
+
+    @Test
+    public void when_many_numbers_then_return_theirs_sum() {
+        assertEquals(6, calc.add("1,2,3"));
+    }
+
     @Test
     public void should_support_numbers_with_many_digits() {
         assertEquals(10, calc.add("10"));
     }
 
     @Test
-    public void When_Many_Numbers_Then_Return_Theirs_Sum() {
-        assertEquals(6, calc.add("1,2,3"));
-    }
-
-    @Test
-    public void When_New_Line_Separator() {
+    public void should_accept_new_line_separator() {
         assertEquals(6, calc.add("1\n2,3"));
     }
 
     @Test
-    public void CustomDelimiter() {
+    public void should_accept_custom_separator() {
         assertEquals(3, calc.add("//;\n1;2"));
     }
 
     @Test
-    public void negative_number_should_throw() {
-
+    public void should_throw_for_negative_number() {
         exception.expect(IllegalArgumentException.class);
         exception.expectMessage("Negatives not allowed: -1");
         calc.add("-1,2");
     }
 
     @Test
-    public void many_negative_numbers_should_throw() {
-
+    public void should_throw_for_many_negative_numbers() {
         exception.expect(IllegalArgumentException.class);
         exception.expectMessage("Negatives not allowed: -4,-5");
         calc.add("2,-4,3,-5");
     }
-
 
 }
